@@ -21,7 +21,7 @@ public class Telefone implements Serializable{
 	@Column(length = 15, nullable = false)
 	private String numero;
 
-	@Column(length = 10, nullable = false)
+	@Column(length = 15, nullable = false)
 	private String tipo;
 
 	public Short getDdd() {
@@ -83,6 +83,12 @@ public class Telefone implements Serializable{
 		} else if (!tipo.equals(other.tipo))
 			return false;
 		return true;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Telefone [ddd=" + ddd + ", numero=" + numero + ", tipo=" + tipo + "]";
 	}
 
 	public Telefone() {

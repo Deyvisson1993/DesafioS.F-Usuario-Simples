@@ -9,11 +9,12 @@ import br.com.deyvisson.dao.UsuarioDAO;
 import br.com.deyvisson.domain.Telefone;
 import br.com.deyvisson.domain.Usuario;
 
+// Testando CRUD Completo
 
 public class UsuarioDAOtest {
 
-	// @Test
-	 @Ignore
+	@Test
+	// @Ignore
 	public void salvar() {
 
 		Telefone telefone = new Telefone(new Short("81"), "99637-3211", "Celular");
@@ -32,7 +33,7 @@ public class UsuarioDAOtest {
 
 	}
 
-	 //@Test
+	// @Test
 	@Ignore
 	public void listar() {
 
@@ -47,7 +48,7 @@ public class UsuarioDAOtest {
 
 	}
 
-	 // @Test
+	// @Test
 	@Ignore
 	public void buscar() {
 
@@ -85,8 +86,8 @@ public class UsuarioDAOtest {
 
 	}
 
-	  @Test
-	  //@Ignore
+	// @Test
+	@Ignore
 	public void autenticar() {
 
 		UsuarioDAO dao = new UsuarioDAO();

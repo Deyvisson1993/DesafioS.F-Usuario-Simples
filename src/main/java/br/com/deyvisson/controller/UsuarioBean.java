@@ -23,9 +23,6 @@ public class UsuarioBean implements Serializable {
 	private Usuario usuario = new Usuario();
 	private Telefone telefone = new Telefone();
 	private UsuarioDAO usuarioDAO = new UsuarioDAO();
-	
-	private Usuario usuarioLogado;
-
 
 	List<Usuario> usuarios;
 	List<Telefone> telefones;
@@ -68,13 +65,6 @@ public class UsuarioBean implements Serializable {
 
 	public void setTelefones(List<Telefone> telefones) {
 		this.telefones = telefones;
-	}
-	public Usuario getUsuarioLogado() {
-		
-		if(usuarioLogado == null) {
-			usuarioLogado = new Usuario();
-		}
-		return usuarioLogado;
 	}
 
 	public UsuarioBean() {
@@ -130,9 +120,9 @@ public class UsuarioBean implements Serializable {
 
 		try {
 
-			novo();
 			this.usuario = (Usuario) evento.getComponent().getAttributes().get("usuarioEditar");
 			this.usuarios = this.usuarioDAO.listar();
+
 
 		} catch (RuntimeException erro) {
 			Messages.addGlobalError("Ocorreu um erro ao tentar Editar um Usuario");
@@ -159,7 +149,7 @@ public class UsuarioBean implements Serializable {
 
 	public String logar() {
 
-		usuario = usuarioDAO.autenticar(usuario.getNome(), usuario.getSenha());
+		this.usuario = this.usuarioDAO.autenticar(this.usuario.getNome(), this.usuario.getSenha());
 
 		if (this.usuario == null) {
 			this.usuario = new Usuario();

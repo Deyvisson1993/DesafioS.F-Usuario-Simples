@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-
 import br.com.deyvisson.domain.Usuario;
 import br.com.deyvisson.util.JpaUtil;
 

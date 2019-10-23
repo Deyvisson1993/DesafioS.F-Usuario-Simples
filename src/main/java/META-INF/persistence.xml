@@ -9,8 +9,6 @@
 		<class>br.com.deyvisson.domain.Usuario</class>
 		<class>br.com.deyvisson.domain.Telefone</class>
 	
-		
-
 		<properties>
 			<!-- Conexão com o banco de dados -->
 			<property name="hibernate.dialect"

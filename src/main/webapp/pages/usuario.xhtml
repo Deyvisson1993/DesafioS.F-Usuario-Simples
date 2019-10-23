@@ -111,12 +111,16 @@
 					value="#{usuarioBean.usuario.telefone.numero}" required="true"
 					requiredMessage="Este campo 'Numero' é obrigatorio" />
 
-				<p:outputLabel for="tipo" value="Tipo " />
-				<p:inputText id="tipo" size="11"
+				<p:outputLabel for="tipo" value="Tipo: " />
+				<p:selectOneRadio id="tipo"
 					value="#{usuarioBean.usuario.telefone.tipo}" required="true"
-					requiredMessage="Este campo 'Tipo' é obrigatorio" />
+					requiredMessage="Esta campo é obrigatorio">
 
+					<f:selectItem itemValue="Celular" itemLabel="Celular" />
+					<f:selectItem itemValue="Residencial" itemLabel="Residencial" />
+					<p:ajax event="click" process="@this" />
 
+				</p:selectOneRadio>
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
